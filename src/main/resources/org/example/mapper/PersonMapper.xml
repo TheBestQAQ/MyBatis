@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mapper.PersonMapper">
+    <!--int insertUser();-->
+    <insert id="insertPerson" useGeneratedKeys="true" keyProperty="id">
+		insert into person values(null,#{name},#{age},#{address})
+	</insert>
+    <update id="updataPerson">
+        update person set age=age+1 where id=1
+    </update>
+    <delete id="deletePerson">
+        delete from person where id=3
+    </delete>
+<!--    查询语句要设置resultType或resultMap-->
+<!--    resultType：默认映射-->
+<!--    resultMap:自定义映射，用于字段名跟属性名不一致-->
+    <select id="getPersonById" resultType="Person">
+        select * from person where id=#{id}
+    </select>
+
+    <select id="getAllPerson" resultType="Person">
+        select * from person
+    </select>
+</mapper>
