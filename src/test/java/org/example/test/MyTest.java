@@ -32,7 +32,7 @@ public class MyTest {
         DynamicSqlMapper mapper = sqlSession.getMapper(DynamicSqlMapper.class);
         List<Person> list = mapper.getPerson(new Person(null, null, 22, "anhui"));
         list.forEach(p-> System.out.println(p));
-
+        System.out.println("v222222");
 //        6.插入数据
 //        List<Person> allPerson = mapper.getAllPerson();
 //        for (Person person : allPerson) {
